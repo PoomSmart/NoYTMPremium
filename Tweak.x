@@ -1,3 +1,5 @@
+#import "../YouTubeHeader/YTPivotBarItemView.h"
+
 // Hide premium banner at the bottom of account page
 %hook YTMMusicAppMetadata
 - (id)sidePanelPromo { return nil; }
@@ -5,7 +7,11 @@
 
 // Hide Upgrade tab bar item at the bottom
 %hook YTPivotBarView
-- (id)itemView4 { return nil; }
+- (YTPivotBarItemView *)itemView4 {
+    YTPivotBarItemView *view = %orig;
+    view.navigationButton.hidden = YES;
+    return nil;
+}
 %end
 
 // Suppress full-screen premium upgrade alert
