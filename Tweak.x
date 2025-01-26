@@ -1,4 +1,4 @@
-#import "../YouTubeHeader/YTPivotBarItemView.h"
+#import <YouTubeHeader/YTPivotBarItemView.h>
 
 // Hide premium banner at the bottom of account page
 %hook YTMMusicAppMetadata
